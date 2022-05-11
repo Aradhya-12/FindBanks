@@ -1,0 +1,67 @@
+.pagination {
+  margin: 15px auto;
+  list-style: none;
+  outline: none;
+}
+
+.pagination > .active > a{
+  background-color: #eb689a ;
+  border-color: #e597db ;
+  color: #fff;
+}
+
+.pagination > li > a{
+  border: 1px solid #fc7a8b ;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  @include tablet {
+    flex-direction: column;
+  }
+}
+
+.filter {
+  &__text-box {
+    width: fit-content;
+    min-width: 126px;
+    padding: 0.8rem;
+    border: 2px solid grey;
+    border-radius: 4px;
+    box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+  }
+
+  &__dropdown {
+    position: absolute;
+    background: whitesmoke;
+    box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+.search-box {
+  box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+
+  &__input {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+  }
+}
+
+.bank-table {
+  border: 1px solid;
+    border-radius: 8px;
+    margin: 1.6rem;
+    padding: 1rem;
+    box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+}

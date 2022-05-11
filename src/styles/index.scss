@@ -1,0 +1,19 @@
+@import './font';
+@import './mixins';
+@import './_display';
+
+
+@import './bankdetail';
+@import './navbar';
+@import './loader';
+@import './tableList';
+
+.main-container {
+  max-width: 120rem;
+  margin: 6rem 2rem;
+
+  @include mobile {
+    width: 100%;
+    max-width: unset;
+  }
+}

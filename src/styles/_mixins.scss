@@ -1,0 +1,30 @@
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin screen-size($x: 1024px) {
+  @media screen and (max-width: $x) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include screen-size($mobile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include screen-size($tablet-width) {
+    @content;
+  }
+}
+
+@mixin flex-row {
+  display: flex;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}

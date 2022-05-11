@@ -1,0 +1,32 @@
+.bankdetail_container {
+  @include flex-col;
+
+  &-detail_box {
+    @include flex-row;
+
+    @include mobile {
+      @include flex-col;
+    }
+  }
+}
+
+.bank_image {
+  width: 50%;
+  max-width: 20rem;
+}
+
+.bank_data{
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 2rem;
+  box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.1);
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+thead {
+  background: pink;
+}
