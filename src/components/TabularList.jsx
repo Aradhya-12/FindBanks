@@ -23,11 +23,11 @@ export default function TabularList({bankList, setBankDetail, msg = "No Result f
   }, [bankList, perPageCount, totalCount])
 
   const handlePerPageCount = useCallback((event) => {
-    if(event.target.value && parseInt(event.target.value) > 0)  {
+    if(event.target.value)  {
       setPerPageCount(parseInt(event.target.value));
       setPageCount(Math.ceil(totalCount/perPageCount))
     }
-    else setPerPageCount("")
+    else setPerPageCount(1)
   }, [perPageCount, totalCount])
 
   const handlePageClick = useCallback((data) => {
@@ -82,7 +82,7 @@ export default function TabularList({bankList, setBankDetail, msg = "No Result f
           <input 
             value={perPageCount}
             type="number"
-            min="1"
+            min={1}
             className='search-box__input box-shadow'
             onChange = {handlePerPageCount} 
           />

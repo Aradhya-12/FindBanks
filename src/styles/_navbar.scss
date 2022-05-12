@@ -11,6 +11,9 @@
 
   .text {
     margin-left: 2rem;
+    &:hover {
+      color: white;
+    }
   }
 }
 
