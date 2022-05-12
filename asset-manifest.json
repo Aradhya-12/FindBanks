@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/FindBanks/static/css/main.3989ab3a.css",
-    "main.js": "/FindBanks/static/js/main.795dbab9.js",
+    "main.css": "/FindBanks/static/css/main.e19aaafa.css",
+    "main.js": "/FindBanks/static/js/main.7426d3f2.js",
     "static/media/bank.svg": "/FindBanks/static/media/bank.1ecdedda42886af2c0993efbecfe3bc1.svg",
     "static/media/Not_found.svg": "/FindBanks/static/media/Not_found.b654a8e68b2364865a5fab8cdad23f84.svg",
     "static/media/sad_emoji.svg": "/FindBanks/static/media/sad_emoji.d0301254ce921e927d93367de0417fd8.svg",
@@ -9,11 +9,11 @@
     "static/media/liked.svg": "/FindBanks/static/media/liked.652cec0cad68e77cb496fa21ab14b589.svg",
     "index.html": "/FindBanks/index.html",
     "static/media/back_arrow.svg": "/FindBanks/static/media/back_arrow.e5c5bcc0af55dac6f8acdeaff8ee496a.svg",
-    "main.3989ab3a.css.map": "/FindBanks/static/css/main.3989ab3a.css.map",
-    "main.795dbab9.js.map": "/FindBanks/static/js/main.795dbab9.js.map"
+    "main.e19aaafa.css.map": "/FindBanks/static/css/main.e19aaafa.css.map",
+    "main.7426d3f2.js.map": "/FindBanks/static/js/main.7426d3f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.3989ab3a.css",
-    "static/js/main.795dbab9.js"
+    "static/css/main.e19aaafa.css",
+    "static/js/main.7426d3f2.js"
   ]
 }
