@@ -6,6 +6,9 @@
 
     @include mobile {
       @include flex-col;
+      
+      align-items: center;
+      margin: 1rem;
     }
   }
 }
@@ -13,6 +16,11 @@
 .bank_image {
   width: 50%;
   max-width: 20rem;
+  padding-right: 1rem;
+
+  @include mobile {
+    padding-bottom: 1rem;
+  }
 }
 
 .bank_data{

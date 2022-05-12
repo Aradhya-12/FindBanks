@@ -4,11 +4,10 @@ import debouce from "lodash.debounce";
 export default function Searchbar({bankList, sortCategory, setBankList, searchClassName, inputClass}) {
   const [searchTerm, setSearchTerm] = useState("");
 
-
   const handleChange = useCallback((event) => {
-    if(event.target.value!=="") setSearchTerm(event.target.value);
+    if(event.target.value !== "") setSearchTerm(event.target.value);
     else setSearchTerm("");
-  },[]);
+  }, []);
   
 useEffect(() => {
   const bank=bankList?.filter((bank) => bank[sortCategory.slug].toString().toUpperCase().includes(searchTerm.toUpperCase()));

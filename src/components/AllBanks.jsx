@@ -1,7 +1,6 @@
-import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react'
-import {useQuery} from 'react-query'
+import { useEffect, useState } from 'react';
+import {useQuery} from 'react-query';
+
 import { CityFilterList, SortByOptionsList } from '../static/filterData'
 import Dropdown from './Dropdown';
 import Loader from './Loader';
@@ -17,8 +16,11 @@ export default function AllBanks({setBankDetail}) {
     const response = await fetch(`https://vast-shore-74260.herokuapp.com/banks?city=${(cityVal.name).toUpperCase()}`)
     return response.json();
   };
+
   const {data, status} = useQuery([cityVal], fetchCityList);
+  
   useEffect(() =>  setBankList(data), [data]);
+
   return (
     <>
       {status !== "loading" ? 

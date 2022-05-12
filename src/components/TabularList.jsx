@@ -1,20 +1,19 @@
-import React, { useContext, useCallback, useState } from 'react'
+import React, { useContext, useCallback, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ReactPaginate from 'react-paginate';
 
 import { FavouriteBanksContext } from '../App'
-import NotFound from './NotFound';
+import { TableHeadingList } from '../static/filterData';
 import LikedIcon from '../images/liked.svg';
 import LikeIcon from '../images/like.svg';
-import { TableHeadingList } from '../static/filterData';
-import { useEffect } from 'react';
+import NotFound from './NotFound';
 
 
 export default function TabularList({bankList, setBankDetail, msg = "No Result found"}) {
   const {favouriteBanksList, setFavouriteBanksList} = useContext(FavouriteBanksContext);
   const [perPageCount, setPerPageCount] = useState(10);
   const [totalCount, setTotalCount] = useState(0);
-  const [pageCount, setPageCount] = useState(0);
+  const [pageCount, setPageCount] = useState(1);
   const [rangeBankList, setRangedBankList] = useState([]);
 
   useEffect(() => {
@@ -25,14 +24,14 @@ export default function TabularList({bankList, setBankDetail, msg = "No Result f
 
   const handlePerPageCount = useCallback((event) => {
     if(event.target.value)  {
-      setPerPageCount(event.target.value);
+      setPerPageCount(parseInt(event.target.value));
       setPageCount((totalCount + totalCount % perPageCount)/perPageCount)
     }
     else setPerPageCount(10)
   }, [perPageCount, totalCount])
 
   const handlePageClick = useCallback((data) => {
-    const list = bankList.slice(data?.selected * perPageCount, (data?.selected * perPageCount) + perPageCount);
+    const list = bankList.slice(data?.selected * perPageCount, perPageCount + data?.selected * perPageCount);
     setRangedBankList(list);
   }, [bankList, perPageCount])
 
@@ -44,7 +43,7 @@ export default function TabularList({bankList, setBankDetail, msg = "No Result f
   const handleAddFavourite=useCallback((bank) => {
     const check = checkIsFavourite(bank);
     let updatedFavouriteList;
-    if(check) updatedFavouriteList= favouriteBanksList.filter((favourite) => favourite!==bank);
+    if(check) updatedFavouriteList= favouriteBanksList.filter((favourite) => JSON.stringify(favourite)!==JSON.stringify(bank));
     else updatedFavouriteList = [...favouriteBanksList, bank];
     setFavouriteBanksList(updatedFavouriteList);
   },[checkIsFavourite, favouriteBanksList, setFavouriteBanksList]);
@@ -79,6 +78,7 @@ export default function TabularList({bankList, setBankDetail, msg = "No Result f
         <input 
           value={perPageCount}
           type="number"
+          min="1"
           className='search-box__input'
           onChange = {handlePerPageCount} 
         />

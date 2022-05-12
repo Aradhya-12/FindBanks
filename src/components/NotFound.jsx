@@ -1,4 +1,5 @@
 import React from 'react'
+
 import NoFoundResult from '../images/Not_found.svg';
 import SadFace from '../images/sad_emoji.svg';
 

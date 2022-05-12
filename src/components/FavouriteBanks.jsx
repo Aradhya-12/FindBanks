@@ -1,6 +1,7 @@
 import React from 'react'
-import TabularList from './TabularList';
+
 import { FavouriteBanksContext } from '../App'
+import TabularList from './TabularList';
 
 export default function FavouriteBanks({setBankDetail}) {
   const {favouriteBanksList} = React.useContext(FavouriteBanksContext);
