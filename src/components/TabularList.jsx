@@ -19,13 +19,13 @@ export default function TabularList({bankList, setBankDetail, msg = "No Result f
   useEffect(() => {
     setTotalCount(bankList?.length)
     setRangedBankList(bankList?.slice(0,  perPageCount))
-    setPageCount((totalCount + totalCount%perPageCount)/perPageCount)
+    setPageCount(Math.ceil(totalCount/perPageCount))
   }, [bankList, perPageCount, totalCount])
 
   const handlePerPageCount = useCallback((event) => {
     if(event.target.value && parseInt(event.target.value) > 0)  {
       setPerPageCount(parseInt(event.target.value));
-      setPageCount((totalCount + totalCount % perPageCount)/perPageCount)
+      setPageCount(Math.ceil(totalCount/perPageCount))
     }
     else setPerPageCount("")
   }, [perPageCount, totalCount])
@@ -64,7 +64,7 @@ export default function TabularList({bankList, setBankDetail, msg = "No Result f
                 const IsLiked = checkIsFavourite(bank);
                 return(
                 <tr onClick={() => setBankDetail(bank)}>
-                  <td><button className='navigate-btn'><Link to={`/all-banks/${bank?.ifsc}`}>Click me</Link></button></td>
+                  <td><button className='navigate-btn'><Link to={`/FindBanks/all-banks/${bank?.ifsc}`}>Click me</Link></button></td>
                   <td>{bank.bank_name}</td>
                   <td>{bank.ifsc}</td>
                   <td>{bank.branch}</td>

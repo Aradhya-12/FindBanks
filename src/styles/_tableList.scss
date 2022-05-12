@@ -80,12 +80,14 @@
 
 .bank-table {
   overflow: auto;
-
+  max-height: 64vh;
+  border: 1px solid;
+  border-radius: 8px;
+  margin: 1.6rem 1.6rem 1.6rem 0;
+  
   &__container {
-    width: max-content;
-    border: 1px solid;
-    border-radius: 8px;
-    margin: 1.6rem 1.6rem 1.6rem 0;
+    width: 100%;
+    margin: 0;
     padding: 1rem;
   }
 }

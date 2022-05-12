@@ -4,7 +4,7 @@
   &-detail_box {
     @include flex-row;
 
-    @include mobile {
+    @include tablet {
       @include flex-col;
       
       align-items: center;
@@ -18,7 +18,7 @@
   max-width: 20rem;
   padding-right: 1rem;
 
-  @include mobile {
+  @include tablet {
     padding-bottom: 1rem;
   }
 }

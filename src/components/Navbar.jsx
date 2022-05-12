@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <div className='navbar flex-row'>
       <span className='text'> <Link to='/FindBanks'>All banks</Link> </span>
-      <span className='text'><Link to="/favourites">Favourites</Link> </span>
+      <span className='text'><Link to="/FindBanks/favourites">Favourites</Link> </span>
     </div>
   )
 }

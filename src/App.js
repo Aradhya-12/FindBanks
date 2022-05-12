@@ -32,8 +32,8 @@ function App() {
             <Navbar />
             <Routes>
               <Route exact path='/FindBanks' element={<AllBanks setBankDetail={setBankDetail}/>} />
-              <Route exact path={`/all-banks/${bankDetail?.ifsc}`} element={<BankDetail bankData={bankDetail} />} />
-              <Route element={<FavouriteBanks setBankDetail={setBankDetail}/>} exact  path="/favourites" />
+              <Route exact path={`/FindBanks/all-banks/${bankDetail?.ifsc}`} element={<BankDetail bankData={bankDetail} />} />
+              <Route element={<FavouriteBanks setBankDetail={setBankDetail}/>} exact  path="/FindBanks/favourites" />
             </Routes>
           </QueryClientProvider>
         </div>
