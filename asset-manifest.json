@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.28fa5639.css",
-    "main.js": "/static/js/main.66c456b2.js",
-    "static/media/bank.svg": "/static/media/bank.1ecdedda42886af2c0993efbecfe3bc1.svg",
-    "static/media/Not_found.svg": "/static/media/Not_found.b654a8e68b2364865a5fab8cdad23f84.svg",
-    "static/media/sad_emoji.svg": "/static/media/sad_emoji.d0301254ce921e927d93367de0417fd8.svg",
-    "static/media/like.svg": "/static/media/like.349f775552befa16cbaa569fb7f43f30.svg",
-    "static/media/liked.svg": "/static/media/liked.652cec0cad68e77cb496fa21ab14b589.svg",
-    "index.html": "/index.html",
-    "static/media/back_arrow.svg": "/static/media/back_arrow.e5c5bcc0af55dac6f8acdeaff8ee496a.svg",
-    "main.28fa5639.css.map": "/static/css/main.28fa5639.css.map",
-    "main.66c456b2.js.map": "/static/js/main.66c456b2.js.map"
+    "main.css": "/FindBanks/static/css/main.28fa5639.css",
+    "main.js": "/FindBanks/static/js/main.8b0d0985.js",
+    "static/media/bank.svg": "/FindBanks/static/media/bank.1ecdedda42886af2c0993efbecfe3bc1.svg",
+    "static/media/Not_found.svg": "/FindBanks/static/media/Not_found.b654a8e68b2364865a5fab8cdad23f84.svg",
+    "static/media/sad_emoji.svg": "/FindBanks/static/media/sad_emoji.d0301254ce921e927d93367de0417fd8.svg",
+    "static/media/like.svg": "/FindBanks/static/media/like.349f775552befa16cbaa569fb7f43f30.svg",
+    "static/media/liked.svg": "/FindBanks/static/media/liked.652cec0cad68e77cb496fa21ab14b589.svg",
+    "index.html": "/FindBanks/index.html",
+    "static/media/back_arrow.svg": "/FindBanks/static/media/back_arrow.e5c5bcc0af55dac6f8acdeaff8ee496a.svg",
+    "main.28fa5639.css.map": "/FindBanks/static/css/main.28fa5639.css.map",
+    "main.8b0d0985.js.map": "/FindBanks/static/js/main.8b0d0985.js.map"
   },
   "entrypoints": [
     "static/css/main.28fa5639.css",
-    "static/js/main.66c456b2.js"
+    "static/js/main.8b0d0985.js"
   ]
 }
