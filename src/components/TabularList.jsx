@@ -23,11 +23,11 @@ export default function TabularList({bankList, setBankDetail, msg = "No Result f
   }, [bankList, perPageCount, totalCount])
 
   const handlePerPageCount = useCallback((event) => {
-    if(event.target.value)  {
+    if(event.target.value && parseInt(event.target.value) > 0)  {
       setPerPageCount(parseInt(event.target.value));
       setPageCount((totalCount + totalCount % perPageCount)/perPageCount)
     }
-    else setPerPageCount(10)
+    else setPerPageCount("")
   }, [perPageCount, totalCount])
 
   const handlePageClick = useCallback((data) => {
@@ -52,36 +52,41 @@ export default function TabularList({bankList, setBankDetail, msg = "No Result f
      <>
      {bankList?.length!==0 ? 
      <>
-        <table className='bank-table'>
-          <thead>
-            <tr>
-              {TableHeadingList.map((item) => (<th>{item}</th>))}
-            </tr>
-          </thead>
-          <tbody>
-            {rangeBankList?.map((bank)=> {
-              const IsLiked = checkIsFavourite(bank);
-              return(
-              <tr onClick={() => setBankDetail(bank)}>
-                <td><button><Link to={`/all-banks/${bank?.ifsc}`}>Click me</Link></button></td>
-                <td>{bank.bank_name}</td>
-                <td>{bank.ifsc}</td>
-                <td>{bank.branch}</td>
-                <td>{bank.bank_id}</td>
-                <td>{bank.address}</td>
-                <td onClick={() => handleAddFavourite(bank)}><img src={IsLiked ? LikedIcon : LikeIcon} alt="like" width={20} height={20} /></td>
+        <div className='bank-table'>
+          <table className='bank-table__container box-shadow'>
+            <thead>
+              <tr>
+                {TableHeadingList.map((item) => (<th>{item}</th>))}
               </tr>
-            )})
-            }
-          </tbody>
-        </table>
-        <input 
-          value={perPageCount}
-          type="number"
-          min="1"
-          className='search-box__input'
-          onChange = {handlePerPageCount} 
-        />
+            </thead>
+            <tbody>
+              {rangeBankList?.map((bank)=> {
+                const IsLiked = checkIsFavourite(bank);
+                return(
+                <tr onClick={() => setBankDetail(bank)}>
+                  <td><button className='navigate-btn'><Link to={`/all-banks/${bank?.ifsc}`}>Click me</Link></button></td>
+                  <td>{bank.bank_name}</td>
+                  <td>{bank.ifsc}</td>
+                  <td>{bank.branch}</td>
+                  <td>{bank.bank_id}</td>
+                  <td>{bank.address}</td>
+                  <td className='pointer' onClick={() => handleAddFavourite(bank)}><img src={IsLiked ? LikedIcon : LikeIcon} alt="like" width={20} height={20} /></td>
+                </tr>
+              )})
+              }
+            </tbody>
+          </table>
+        </div>
+        <fieldset className='page-input'>
+          <legend>per page</legend>
+          <input 
+            value={perPageCount}
+            type="number"
+            min="1"
+            className='search-box__input box-shadow'
+            onChange = {handlePerPageCount} 
+          />
+        </fieldset>
         <ReactPaginate
           previousLabel={"prev"}
           nextLabel={"next"}

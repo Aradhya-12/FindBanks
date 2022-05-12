@@ -29,7 +29,7 @@ const BankDetail = ({bankData}) => {
 ]
   return (
     <div className='bankdetail_container'>
-      <img onClick={() => router(-1)} src={backArrow} alt="backward" height={50} width={50}/>
+      <img className='pointer' onClick={() => router(-1)} src={backArrow} alt="backward" height={50} width={50}/>
       <div className='bankdetail_container-detail_box'>
         <img className='bank_image' src={bankLogo} alt={bankData.bank_name || "bank"} />
         <div className='bank_data'>

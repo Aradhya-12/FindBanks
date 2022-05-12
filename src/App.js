@@ -31,7 +31,7 @@ function App() {
           <QueryClientProvider client={queryClient} contextSharing={true}>
             <Navbar />
             <Routes>
-              <Route exact path='/' element={<AllBanks setBankDetail={setBankDetail}/>} />
+              <Route path='/' element={<AllBanks setBankDetail={setBankDetail}/>} />
               <Route exact path={`/all-banks/${bankDetail?.ifsc}`} element={<BankDetail bankData={bankDetail} />} />
               <Route element={<FavouriteBanks setBankDetail={setBankDetail}/>} exact  path="/favourites" />
             </Routes>

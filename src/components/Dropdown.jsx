@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react'
 
 export default function Dropdown({selectedItem, setSelectedItem, ...props}) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-
   const handleItemClick = useCallback((item) => {
     setSelectedItem(item);
     setDropdownOpen(false);
@@ -10,13 +9,16 @@ export default function Dropdown({selectedItem, setSelectedItem, ...props}) {
 
   return (
     <div className='filter'>
-      <div className='filter__text-box' onClick={() => setDropdownOpen(!isDropdownOpen)}>
+      <div
+        className='filter__text-box box-shadow pointer' 
+        onClick={() => setDropdownOpen(!isDropdownOpen)}
+      >
         <span>{selectedItem?.name}</span>
       </div>
       {isDropdownOpen ? (
-        <div className='filter__dropdown'>
+        <div className='filter__dropdown box-shadow'>
           {props?.dropdownList?.map((item, index) => (
-            <div key ={item?.id || index} onClick={() => handleItemClick(item)}>
+            <div className='pointer filter__dropdown-item' key ={item?.id || index} onClick={() => handleItemClick(item)}>
               {item?.name}
             </div>
           ))}

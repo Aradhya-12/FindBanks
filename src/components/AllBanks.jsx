@@ -28,7 +28,7 @@ export default function AllBanks({setBankDetail}) {
           <div className='sort-container'>
             <Dropdown selectedItem={cityVal} setSelectedItem={setCityVal} dropdownList={CityFilterList}/>
             <Dropdown selectedItem={sortByVal} setSelectedItem={setSortByVal} dropdownList={SortByOptionsList}/> 
-            <Searchbar searchClassName= "search-box" inputClass="search-box__input" sortCategory={sortByVal} bankList={data} setBankList={setBankList}/>
+            <Searchbar searchClassName= "search-box box-shadow" inputClass="search-box__input" sortCategory={sortByVal} bankList={data} setBankList={setBankList}/>
           </div>
           {status==='success' ? <TabularList bankList={bankList} setBankDetail={setBankDetail} /> : <>Something went wrong</>}
         </div>
